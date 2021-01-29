@@ -1,24 +1,20 @@
-
+import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet } from 'react-native';
+import { NewsForm, NewsList, NewsView } from './src/container';
 
 const App: () => React$Node = () => {
+  const Stack = createStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text style={styles.appName}>News Portal</Text>
-
-      <Text style={styles.title}>Dia de sol em Floripa</Text>
-
-      <Text style={styles.body}>
-        Dias de Sol fazem a alegria da rapaziada depois da chuva o povo curte uma praia
-      </Text>
-
-      <Text style={styles.autor}>Euler das Virgens</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={NewsList} />
+        <Stack.Screen name="Cadastro" component={NewsForm} />
+        <Stack.Screen name="Visualizar" component={NewsView} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
