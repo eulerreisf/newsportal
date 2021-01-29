@@ -10,7 +10,11 @@ const App: () => React$Node = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={NewsList} />
+        <Stack.Screen
+          name="Home"
+          component={NewsList}
+          options={{ title: 'NewsList seted Title' }}
+        />
         <Stack.Screen name="Cadastro" component={NewsForm} />
         <Stack.Screen name="Visualizar" component={NewsView} />
       </Stack.Navigator>
