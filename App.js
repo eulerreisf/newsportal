@@ -1,23 +1,22 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+// import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from 'react-native';
-import { NewsForm, NewsList, NewsView } from './src/container';
+import { NewsForm,NewsList } from './src/container';
 
 const App: () => React$Node = () => {
-  const Stack = createStackNavigator();
+  const Tab = createBottomTabNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
+      <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen
           name="Home"
           component={NewsList}
-          options={{ title: 'NewsList seted Title' }}
         />
-        <Stack.Screen name="Cadastro" component={NewsForm} />
-        <Stack.Screen name="Visualizar" component={NewsView} />
-      </Stack.Navigator>
+        <Tab.Screen name="Cadastro" component={NewsForm} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
