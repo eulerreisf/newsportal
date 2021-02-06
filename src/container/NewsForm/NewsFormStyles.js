@@ -7,9 +7,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    textAlign: 'center',
-    backgroundColor: 'black',
     justifyContent: 'center',
+  },
+  linearGradient: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    height: windowHeight,
+    width: windowWidth,
   },
   titleStyle: {
     color: 'white',
@@ -19,7 +24,6 @@ const styles = StyleSheet.create({
   },
   labelStyle: {
     color: 'white',
-    textAlign: 'center',
     fontSize: 20,
     marginBottom: 10,
   },
@@ -37,7 +41,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     fontSize: 20,
     padding: 10,
-    width: windowWidth * 0.9,
+    width: windowWidth * 0.8,
     height: windowHeight * 0.4,
     color: 'white',
     marginBottom: 20,
@@ -50,6 +54,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     marginBottom: 20,
+  },
+  button: {
+    backgroundColor: 'white',
   },
 });
 
